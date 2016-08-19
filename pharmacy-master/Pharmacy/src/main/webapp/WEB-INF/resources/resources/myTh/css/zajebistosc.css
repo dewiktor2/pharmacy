@@ -1,0 +1,165 @@
+/*    caly tekst          */
+*{
+	margin: 0px;  
+	padding: 0px;
+}
+h1{
+	font: bold 20px Tahoma;
+}
+h1{
+	font: bold 40px Tahoma;
+}
+header,section,footer,aside,nav,article,hgroup{
+	display:block;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+body
+{
+	text-align:center;
+}
+
+#big_one{
+	border: 1px solid black;
+	width:1000px;
+	margin: 20px auto;
+	text-align:left
+}
+#top_header{
+	background:yellow;
+	border: 1px solid ble;
+	padding: 20px ; //inside
+}
+#top_menu{
+
+	background:blue;
+	color:white;
+	
+}
+
+#register {
+	width: 1009px;
+	padding: 20px;
+	margin: 100px auto;
+	background: #1f;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border: 1px solid #000;
+}
+form { 
+    display: block;
+    margin-top: 0em;
+}
+
+#register input {
+  font-size: 14px;
+}
+
+table{
+     width:100% 
+	 text-align:center;	 
+}
+th{
+      color:#888888;
+	  font-weight:normal;
+	  text-decoration:underline;
+}
+td{
+     padding:3px 10px;
+}
+input {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+#register fieldset {
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 20px;
+  position: relative;
+}
+#top_menu li{
+    
+	display:inline-block;
+	list-style:none;
+	padding: 5px;
+	font: bold 14px Tahoma;	
+}
+#main_section{
+	float:left;  /* lewa strona */
+	width: 660px;
+	margin: 30px;  /*720px, 280 left */
+}
+#side_news{
+	float:left;  /* lewa strona */
+	width: 220px;
+	margin: 20px 0px;  /*720px, 280 left */
+	padding: 30 px;
+	background: #66CCCC;
+}
+#footer{
+	/*    czystosc  -reset default layout   */
+	clear:both;
+	text-align:center;
+	padding:20px;
+	border-top: 2px solid green;
+
+}
+article{
+	background:#FFFBCC;
+	border: 1px solid red;
+	padding: 20px;  	/*pomiedzy tekstem i borderem*/
+	margin-bottom: 15px;
+}
+article footer{
+	text-align:right;
+
+
+
+}
+h3{ /*Ciemno Szary tytul*/
+     font-family:Arial;
+	 font-size:14px;
+	 color:#303030;
+}
+a:link{
+     color:#66CCCC
+	 text-decoration:none;
+}
+a:visited{
+     color:#66CCCC
+	 text-decoration:none;
+}
+a:hover{
+     color:#CC6600;
+	 text-decoration:none;
+	 
+}
+a:active{
+     color:#CC6600;
+	 text-decoration:none;
+	 
+}
+login {
+  width: 300px;
+}
+
+#login input[type="password"] {
+  border-top: none;
+  border-radius: 0px 0px 3px 3px;
+}
+
+#login input[type="submit"] {
+  background: #1dabb8;
+  border-radius: 3px;
+  color: #fff;
+  float: right;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 12px 20px;
+}

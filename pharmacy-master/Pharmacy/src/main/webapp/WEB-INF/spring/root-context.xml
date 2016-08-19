@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- <bean class="app.Spring.dao.HibernateDao"></bean> -->
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<bean id="propertyConfigurer" class= "org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	  <property name="locations">
+	  	  <list>
+	  	  	  <value>/WEB-INF/jdbc.properties</value>
+<!--Inne pliki  	  <value>/WEB-INF/my_props.properties</value>	  	  -->
+	  	  </list>
+	  </property>
+</bean>
+		
+		
+	
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	  <property name="driverClassName" value="${jdbc.driverClassName}"/>
+	  <property name="url" value="${jdbc.url}"/>
+	  <property name="username" value="${jdbc.username}"/>
+	  <property name="password" value="${jdbc.password}"/>
+</bean>
+		<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	  
+      <property name="packagesToScan" value="app.Spring.domain" />
+      <property name="hibernateProperties">
+            <props>
+                
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+                <prop key="hibernate.max_fetch_depth">5</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto" >update</prop> 
+                  
+                
+
+               
+           </props>
+        </property>
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+</bean>
+
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="dao" class="app.Spring.dao.ProductDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean> 	
+	
+	<bean id="registrationService" class="app.Spring.dao.UserServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="OrderItemService" class="app.Spring.dao.OrderItemImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="CustomerOrderService" class="app.Spring.dao.CustomerOrderImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="OpinionService" class="app.Spring.dao.OpinionServiceImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="CategoryService" class="app.Spring.dao.CategoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>
