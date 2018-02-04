@@ -1,2 +1,2 @@
 # pharmacy
-Strasznie stara inżynierka w JAVIE, pokazuje jak nie pisać kodu :D
+Very old engineer work, it shows how not to write code :D
